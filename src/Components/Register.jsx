@@ -1,14 +1,26 @@
 const Register = () => {
-    return (
-        <div className="mx-auto">
-            <h2 className="text-3xl">Please Register</h2>
-            <form >
-                <input className="mb-4" type="email" name="email" id="" /><br />
-                <input type="password" name="password" id=""/><br />
-                <input type="submit" value="Register"/>
-            </form>
-        </div>
-    );
+
+    const handleRegister = e =>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email,password);
+    }
+
+  return (
+    <div className="">
+      <div className="mx-auto md:w-1/2">
+        <h2 className="text-3xl py-2 px-4 mb-5">Please Register</h2>
+        <form onSubmit={handleRegister} className="border p-5 rounded">
+          <input className="mb-4 w-3/4 border py-2 px-4" type="email"  name="email" id="" placeholder="Email address"/>
+          <br />
+          <input className="mb-4 w-3/4 border py-2 px-4" type="password" name="password" id="" placeholder="Password"/>
+          <br />
+          <input className="btn btn-secondary mb-4 w-3/4" type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default Register;
